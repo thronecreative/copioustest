@@ -1,0 +1,45 @@
+// =============================================
+// LAYOUT
+// =============================================
+
+*
+	+box-size
+
+	img
+		max-width: 100%
+		height: auto
+
+body
+
+	//+media($large-screen) 
+		//padding-top: 70px
+	
+	
+
+// =============================================
+// TYPOGRAPHY
+// =============================================
+
+html
+	color: $color_text
+	font-family: $font_main
+	font-size: $font_size
+	line-height: $font_line_height
+
+h1, h2, h3, h4, h5, h6
+	font-family: $font_header
+	font-size: modular-scale(1)
+	margin: 0 0 $small_spacing
+
+p
+	margin: 0 0 $small_spacing
+
+a
+	transition: all $trans_speed $trans_ease
+	text-decoration: none
+	color: $color_accent
+
+	&:active,
+	&:focus,
+	&:hover
+		color: shade($color_accent, 25%)

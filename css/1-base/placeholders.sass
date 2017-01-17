@@ -1,0 +1,66 @@
+// =============================================
+// COLORS
+// =============================================
+
+%link_light
+	color: $color_text-invert
+
+	&:hover
+		color: shade($color_text-invert, 20%)
+
+
+%link_accent
+	color: $color_accent
+
+	&:hover
+		color: shade($color_accent, 20%)
+
+
+// =============================================
+// SECTION STYLES
+// =============================================
+
+%bg_dark
+	background-color: $color_bg-invert
+	color: $color_text-invert
+
+	a
+		@extend %link_accent
+
+
+%bg_med
+	background-color: lighten($color_bg-invert, 20%)
+	color: $color_text-invert
+
+	a
+		@extend %link_accent
+
+
+%bg_accent
+	background-color: $color_accent
+	color: $color_text
+
+	a
+		@extend %link_light
+
+
+
+
+// =============================================
+// TRANSISIONS
+// =============================================
+	
+%trans
+	+transition(all $trans_speed $trans_ease)
+
+
+
+
+
+
+
+
+
+
+
+
