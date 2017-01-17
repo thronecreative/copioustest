@@ -11,7 +11,7 @@ $( document ).ready(function() {
 				col_num        = 3,
 				images         = [],
 				image_groups   = [],
-				speed_base     = 1,
+				speeds     = [1.25, 1, 1.5],
 				randomize      = true;
 
 		
@@ -56,7 +56,7 @@ $( document ).ready(function() {
 					image_group.images = imgs,
 					image_group.image_index = 0,
 					image_group.pos_y = 0,
-					image_group.speed = Math.floor(Math.random() * 6) + 1;
+					image_group.speed = speeds[index];
 
 			addImageGroup(image_group);
 			addImage(image_group);
@@ -102,7 +102,7 @@ $( document ).ready(function() {
 		function removeImage(){}
 
 		function moveGroup(image_group){
-			var 	speed = (1 / image_group.speed) + 1
+			var 	speed = image_group.speed,
 				new_pos = image_group.image_holder.offset().top - speed;
 
 			image_group.image_holder.offset({top: new_pos});
@@ -155,5 +155,10 @@ $( document ).ready(function() {
 		  }
 
 		  return chunks;
+		}
+
+		// get random number
+		function randBetween(low, high){
+			Math.floor(Math.random() * high) + low;
 		}
 });
